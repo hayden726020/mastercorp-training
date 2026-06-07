@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageIcon, MapPin, ArrowRight } from "lucide-react";
+import { ImageIcon, MapPin, ArrowRight, BedDouble } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { RoomArea, AreaContent, AreaImage } from "@/types";
@@ -15,12 +15,19 @@ import { cn } from "@/lib/utils";
 import { TYPE_CONFIG } from "@/lib/image-type-config";
 import { ROUTES } from "@/lib/constants";
 import { t } from "@/lib/locales/zh";
+import { BED_AREA_IDS } from "@/lib/bed-making-data";
 
 // ── Single image card ──
 
 function ImageCard({ image }: { image: AreaImage }) {
   const config = TYPE_CONFIG[image.imageType];
   const BadgeIcon = config.icon;
+
+  // Bilingual alt text for hotspot modal
+  const altLabel =
+    image.altTextZh && image.altText
+      ? `${image.altTextZh} · ${image.altText}`
+      : (image.altTextZh ?? image.altText);
 
   return (
     <figure
@@ -30,13 +37,13 @@ function ImageCard({ image }: { image: AreaImage }) {
         config.border
       )}
       role="group"
-      aria-label={`${config.labelZh}：${image.altTextZh ?? image.altText}`}
+      aria-label={`${config.labelZh}：${altLabel}`}
     >
       {/* Image container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted/30">
         <Image
           src={image.imageUrl}
-          alt={image.altTextZh ?? image.altText}
+          alt={altLabel}
           fill
           sizes="(max-width: 768px) 100vw, 320px"
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
@@ -60,7 +67,7 @@ function ImageCard({ image }: { image: AreaImage }) {
 
       {/* Caption */}
       <figcaption className="px-3 py-2 text-xs text-muted-foreground leading-relaxed">
-        {image.altTextZh ?? image.altText}
+        {altLabel}
       </figcaption>
     </figure>
   );
@@ -154,13 +161,31 @@ export default function AreaDetailSheet({
             )}
           </div>
 
-          {/* ── Right: 7-step cleaning process ── */}
+          {/* ── Right: cleaning steps or bed-making button ── */}
           {/* Mobile: subtle top-border separator */}
           <div className="md:hidden">
             <hr className="border-border/40 mb-3" aria-hidden="true" />
           </div>
-          <div className="md:w-[228px] md:shrink-0">
-            <StepSummary />
+          <div className="md:w-[228px] md:shrink-0 flex flex-col gap-3">
+            {/* All areas: 7-step cleaning process */}
+            <StepSummary bilingual />
+
+            {/* Bed areas: additional bed-making button */}
+            {BED_AREA_IDS.has(area.id) && (
+              <Link
+                href={`/rooms/${roomSlug}/${area.id}/bed-making`}
+                className={cn(
+                  "inline-flex items-center gap-1.5 px-3 py-2 rounded-button",
+                  "bg-primary text-primary-foreground",
+                  "text-xs font-semibold",
+                  "hover:bg-primary/90 transition-colors duration-150",
+                  "justify-center"
+                )}
+              >
+                <BedDouble size={14} strokeWidth={2.5} />
+                Bed-Making (8 Steps)
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -172,7 +197,7 @@ export default function AreaDetailSheet({
           href={ROUTES.AREA_DETAIL(roomSlug, area.id)}
           className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-150"
         >
-          {t("area.view_full_details")}
+          View Full Details
           <ArrowRight size={14} strokeWidth={2} />
         </Link>
       </div>

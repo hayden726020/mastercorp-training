@@ -49,11 +49,6 @@ export default function RoomTypeCard({ room, className }: RoomTypeCardProps) {
             {room.name}
           </h3>
 
-          {/* Description */}
-          <p className="mt-1.5 text-white/75 text-sm md:text-base leading-relaxed line-clamp-2">
-            {room.description}
-          </p>
-
           {/* CTA row */}
           <div className="mt-3 flex items-center gap-1.5 text-white/90 text-sm font-medium">
             <span>View Standards</span>

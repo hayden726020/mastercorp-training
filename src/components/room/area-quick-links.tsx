@@ -4,7 +4,6 @@ import { Bed, Bath, Coffee, Tv, DoorOpen, Monitor, CookingPot, MapPin } from "lu
 import { ToiletIcon, WashbasinIcon } from "./custom-icons";
 import { cn } from "@/lib/utils";
 import type { RoomArea } from "@/types";
-import { t } from "@/lib/locales/zh";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyIcon = React.ComponentType<any>;
@@ -52,7 +51,7 @@ export default function AreaQuickLinks({
       <div className="flex gap-2 px-1 py-1 min-w-max">
         {areas.map((area) => {
           const Icon = iconMap[area.iconType] ?? MapPin;
-          const displayName = area.nameZh ? `${area.nameZh} · ${area.name}` : area.name;
+          const displayName = area.name;
           return (
             <button
               key={area.id}
@@ -69,7 +68,7 @@ export default function AreaQuickLinks({
                 "focus-visible:outline-2 focus-visible:outline-primary",
                 "touch-manipulation"
               )}
-              aria-label={t("hotspot.go_to_area", { name: displayName })}
+              aria-label={`Go to ${displayName}`}
             >
               <span
                 className="flex items-center justify-center w-6 h-6 rounded-full bg-primary/[0.08] text-primary"

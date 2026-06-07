@@ -5,8 +5,8 @@ import { BRAND_NAME, PROPERTY_NAME, ROUTES } from "@/lib/constants";
 import { getRooms } from "@/data";
 
 export const metadata: Metadata = {
-  title: "Access Guide",
-  description: "How to access the Mastercorp housekeeper training website via QR code",
+  title: "培训访问",
+  description: "如何通过二维码访问 Mastercorp 客房服务员培训网站",
 };
 
 export default function HelpAccessPage() {
@@ -22,18 +22,18 @@ export default function HelpAccessPage() {
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft size={16} aria-hidden="true" />
-          <span>Back to Home · 返回首页</span>
+          <span>返回首页</span>
         </Link>
       </nav>
 
       {/* Header */}
       <div className="flex flex-col gap-2">
         <h1 className="text-section-title font-bold text-primary tracking-tight">
-          Training Access · 培训访问
+          培训访问
         </h1>
         <p className="text-body text-muted-foreground">
-          Scan the QR code below or type the URL into your phone browser to access the
-          training site. Bookmark it or add it to your home screen for quick access.
+          扫描下方二维码或在手机浏览器中输入网址，即可访问培训网站。
+          建议将其添加到书签或主屏幕，以便快速访问。
         </p>
       </div>
 
@@ -41,23 +41,22 @@ export default function HelpAccessPage() {
       <section className="flex flex-col items-center gap-4 p-6 bg-surface rounded-xl border">
         <div className="flex items-center gap-2 text-sm font-semibold text-foreground/70">
           <QrCode size={18} aria-hidden="true" />
-          <span>Scan to Access · 扫码访问</span>
+          <span>扫码访问</span>
         </div>
 
         {/* QR Code placeholder — replace with actual QR image */}
         <div className="w-48 h-48 bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/30">
           <div className="text-center text-xs text-muted-foreground px-4">
             <QrCode size={48} className="mx-auto mb-2 text-muted-foreground/50" />
-            <p>QR Code</p>
+            <p>QR 码</p>
             <p className="mt-1 opacity-70">
-              Generate from: {siteUrl}
+              从以下网址生成：{siteUrl}
             </p>
           </div>
         </div>
 
         <p className="text-xs text-muted-foreground text-center max-w-xs">
-          Open your phone camera and point it at the QR code. Tap the notification
-          to open the training site.
+          打开手机相机，对准二维码。点击弹出的通知即可打开培训网站。
         </p>
       </section>
 
@@ -65,7 +64,7 @@ export default function HelpAccessPage() {
       <section className="flex flex-col gap-4">
         <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
           <Smartphone size={20} aria-hidden="true" />
-          How to Access · 如何访问
+          如何访问
         </h2>
 
         <div className="grid gap-4">
@@ -74,12 +73,11 @@ export default function HelpAccessPage() {
             <QrCode size={22} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <h3 className="text-sm font-semibold text-foreground">
-                Method 1: Scan QR Code · 方法一：扫码
+                方法一：扫码
               </h3>
               <p className="text-xs text-muted-foreground mt-1">
-                Open your phone camera app, point it at the QR code on the training
-                card or poster. Your phone will show a link — tap it to open the
-                training site.
+                打开手机相机应用，对准培训卡片或海报上的二维码。
+                手机会显示链接 — 点击即可打开培训网站。
               </p>
             </div>
           </div>
@@ -89,10 +87,10 @@ export default function HelpAccessPage() {
             <Globe size={22} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <h3 className="text-sm font-semibold text-foreground">
-                Method 2: Type the URL · 方法二：输入网址
+                方法二：输入网址
               </h3>
               <p className="text-xs text-muted-foreground mt-1">
-                Open your phone browser and type:{" "}
+                打开手机浏览器，输入：{" "}
                 <code className="px-1 py-0.5 bg-muted rounded text-xs font-mono break-all">
                   {siteUrl}
                 </code>
@@ -105,12 +103,12 @@ export default function HelpAccessPage() {
             <Smartphone size={22} className="text-primary shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <h3 className="text-sm font-semibold text-foreground">
-                Method 3: Add to Home Screen · 方法三：添加到主屏幕
+                方法三：添加到主屏幕
               </h3>
               <p className="text-xs text-muted-foreground mt-1">
-                After opening the site, tap the Share button in your browser and
-                select &ldquo;Add to Home Screen&rdquo;. This creates an app icon so
-                you can open it with one tap next time.
+                打开网站后，点击浏览器中的分享按钮，
+                选择「添加到主屏幕」。这样会创建一个应用图标，
+                下次一键即可打开。
               </p>
             </div>
           </div>
@@ -121,7 +119,7 @@ export default function HelpAccessPage() {
       <section className="flex flex-col gap-3">
         <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
           <Wifi size={20} aria-hidden="true" />
-          Direct Room Links · 房型直达链接
+          房型直达链接
         </h2>
 
         <div className="grid gap-2">

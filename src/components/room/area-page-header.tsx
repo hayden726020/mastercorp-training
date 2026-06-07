@@ -21,7 +21,7 @@ export default function AreaPageHeader({
 }: AreaPageHeaderProps) {
   const Icon = iconMap[iconType] ?? MapPin;
 
-  const displayName = nameZh ? `${nameZh} · ${name}` : name;
+  const displayName = nameZh ?? name;
   const displayDesc = descriptionZh ?? description;
 
   return (

@@ -1,12 +1,16 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { BedDouble } from "lucide-react";
 import type { Metadata } from "next";
 import { getRoomBySlug, getAreasByRoom, getContentByArea } from "@/data";
 import { t } from "@/lib/locales/zh";
+import { BED_AREA_IDS } from "@/lib/bed-making-data";
 import AreaPageHeader from "@/components/room/area-page-header";
 import AreaBreadcrumb from "@/components/room/area-breadcrumb";
 import ImageGallery from "@/components/image/image-gallery";
 import StepSummary from "@/components/room/step-summary";
 import RelatedAreasLinks from "@/components/room/related-areas-links";
+import { cn } from "@/lib/utils";
 
 // ── Props ──
 
@@ -36,8 +40,8 @@ export function generateMetadata({
   const area = areas.find((a) => a.id === params.areaId);
   if (!area) return { title: t("area.not_found") };
 
-  const areaTitle = area.nameZh ? `${area.nameZh} · ${area.name}` : area.name;
-  const roomTitle = room.nameZh ? `${room.nameZh} · ${room.name}` : room.name;
+  const areaTitle = area.nameZh ?? area.name;
+  const roomTitle = room.nameZh ?? room.name;
 
   return {
     title: `${areaTitle} — ${roomTitle}`,
@@ -95,8 +99,8 @@ export default function AreaDetailPage({ params }: AreaDetailPageProps) {
           />
         </div>
 
-        {/* Right: 7-step process (desktop sidebar) */}
-        <div className="lg:w-[228px] lg:shrink-0">
+        {/* Right: cleaning steps (all areas) + bed-making button (bed areas only) */}
+        <div className="lg:w-[228px] lg:shrink-0 flex flex-col gap-3">
           {/* Mobile: collapsible via <details> */}
           <details className="lg:hidden group" open>
             <summary className="flex items-center gap-1.5 cursor-pointer text-xs font-semibold text-muted-foreground uppercase tracking-wide py-2 select-none">
@@ -114,6 +118,23 @@ export default function AreaDetailPage({ params }: AreaDetailPageProps) {
           <div className="hidden lg:block">
             <StepSummary />
           </div>
+
+          {/* Bed areas: additional bed-making button */}
+          {BED_AREA_IDS.has(area.id) && (
+            <Link
+              href={`/rooms/${room.slug}/${area.id}/bed-making`}
+              className={cn(
+                "inline-flex items-center gap-1.5 px-3 py-2 rounded-button",
+                "bg-primary text-primary-foreground",
+                "text-xs font-semibold",
+                "hover:bg-primary/90 transition-colors duration-150",
+                "justify-center"
+              )}
+            >
+              <BedDouble size={14} strokeWidth={2.5} />
+              Bed-Making (8 Steps)
+            </Link>
+          )}
         </div>
       </div>
 

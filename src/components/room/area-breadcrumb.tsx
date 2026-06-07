@@ -22,8 +22,8 @@ export default function AreaBreadcrumb({
   areaNameZh,
   className,
 }: AreaBreadcrumbProps) {
-  const roomLabel = roomNameZh ? `${roomNameZh} · ${roomName}` : roomName;
-  const areaLabel = areaNameZh ? `${areaNameZh} · ${areaName}` : areaName;
+  const roomLabel = roomNameZh ?? roomName;
+  const areaLabel = areaNameZh ?? areaName;
 
   return (
     <nav aria-label={t("nav.breadcrumb")} className={cn("flex items-center gap-1.5 text-sm flex-wrap", className)}>

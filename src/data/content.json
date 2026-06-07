@@ -4,8 +4,8 @@
     "areaId": "area-a-bed",
     "title": "Bedroom Standards",
     "titleZh": "卧室标准",
-    "description": "Bed-making process (8 steps):\n1. Fitted Sheet — Fit the King Fitted Sheet over the mattress. Pull all four corners tight.\n2. First Flat Sheet — Lay the King Flat Sheet on the bed. Leave about two finger-widths (2–3 in) of overhang at the headboard.\n3. Duvet — Lay the Duvet flat in the center of the bed. Top edge flush with the headboard.\n4. Second Flat Sheet — Lay another King Flat Sheet. Align the top edge with the duvet top.\n5. Headboard Fold — Fold the excess sheet from Step 2 back over the duvet. About 1 in wide, neat and straight.\n6. Tuck Sides & Foot — Tuck all excess material under the mattress. Pull tight, no visible wrinkles.\n7. Pillow Dressing — Pillow Protector first, then Pillow Case. Opening faces inward.\n8. Pillow Placement — Center pillows at headboard. Symmetrical, equal height.",
-    "descriptionZh": "铺床流程（8步）：\n1. 铺床笠（King Fitted Sheet）—— 将King Fitted Sheet套在床垫上，四个角全部拉紧，确保没有松脱。\n2. 铺第一层平床单（King Flat Sheet）—— 将King Flat Sheet铺在床上，床头位置多留约两根手指宽（约2-3英寸）垂出床垫。\n3. 铺被子（Duvet）—— 将Duvet平铺在床中央，被子顶部与床头边缘齐平。\n4. 铺第二层平床单（King Flat Sheet）—— 再铺一张King Flat Sheet，床单顶部与Duvet顶部对齐。\n5. 做床头翻边—— 将第2步多留出来的床单向上翻折回来，盖住Duvet顶部，翻折宽度约1英寸左右，看起来整齐平直。\n6. 收床尾和两侧—— 将床尾及两侧所有多余的床单和被子塞入床垫下，拉紧表面，确保没有明显褶皱。\n7. 套枕头—— 先套Pillow Protector（枕芯保护套），再套Pillow Case（枕套），整理平整，枕套开口朝内侧。\n8. 摆放枕头—— 将枕头居中放在床头，左右对称，高度一致。",
+    "description": "King bed with premium linens and 4 pillows. See the 8-step bed-making guide for detailed standards.\n特大床配高级床品，4个枕头。查看铺床流程（8步）了解详细标准。",
+    "descriptionZh": "特大床配高级床品，4个枕头。查看铺床流程（8步）了解详细标准。\nKing bed with premium linens and 4 pillows. See the 8-step bed-making guide for detailed standards.",
     "images": [
       {
         "id": "img-a-bed-01",
@@ -184,8 +184,8 @@
     "areaId": "area-b-bed",
     "title": "Bed Area Standards",
     "titleZh": "床区标准",
-    "description": "Bed-making process (8 steps):\n1. Fitted Sheet — Fit the King Fitted Sheet over the mattress. Pull all four corners tight.\n2. First Flat Sheet — Lay the King Flat Sheet on the bed. Leave about two finger-widths (2–3 in) of overhang at the headboard.\n3. Duvet — Lay the Duvet flat in the center of the bed. Top edge flush with the headboard.\n4. Second Flat Sheet — Lay another King Flat Sheet. Align the top edge with the duvet top.\n5. Headboard Fold — Fold the excess sheet from Step 2 back over the duvet. About 1 in wide, neat and straight.\n6. Tuck Sides & Foot — Tuck all excess material under the mattress. Pull tight, no visible wrinkles.\n7. Pillow Dressing — Pillow Protector first, then Pillow Case. Opening faces inward.\n8. Pillow Placement — Center pillows at headboard. Symmetrical, equal height.",
-    "descriptionZh": "铺床流程（8步）：\n1. 铺床笠（King Fitted Sheet）—— 将King Fitted Sheet套在床垫上，四个角全部拉紧，确保没有松脱。\n2. 铺第一层平床单（King Flat Sheet）—— 将King Flat Sheet铺在床上，床头位置多留约两根手指宽（约2-3英寸）垂出床垫。\n3. 铺被子（Duvet）—— 将Duvet平铺在床中央，被子顶部与床头边缘齐平。\n4. 铺第二层平床单（King Flat Sheet）—— 再铺一张King Flat Sheet，床单顶部与Duvet顶部对齐。\n5. 做床头翻边—— 将第2步多留出来的床单向上翻折回来，盖住Duvet顶部，翻折宽度约1英寸左右，看起来整齐平直。\n6. 收床尾和两侧—— 将床尾及两侧所有多余的床单和被子塞入床垫下，拉紧表面，确保没有明显褶皱。\n7. 套枕头—— 先套Pillow Protector（枕芯保护套），再套Pillow Case（枕套），整理平整，枕套开口朝内侧。\n8. 摆放枕头—— 将枕头居中放在床头，左右对称，高度一致。",
+    "description": "Queen bed with premium linens and pillows. See the 8-step bed-making guide for detailed standards.\n大床配高级床品及枕头。查看铺床流程（8步）了解详细标准。",
+    "descriptionZh": "大床配高级床品及枕头。查看铺床流程（8步）了解详细标准。\nQueen bed with premium linens and pillows. See the 8-step bed-making guide for detailed standards.",
     "images": [
       {
         "id": "img-b-bed-01",

@@ -6,7 +6,6 @@ import type { RoomArea } from "@/types";
 import { iconMap } from "./hotspot-marker";
 import { ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { t } from "@/lib/locales/zh";
 
 interface RelatedAreasLinksProps {
   areas: RoomArea[];
@@ -26,7 +25,7 @@ export default function RelatedAreasLinks({
   return (
     <div className="flex flex-col gap-2">
       <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-1">
-        {t("area.related_areas")}
+        Related Areas
       </span>
       <div
         className={cn(
@@ -36,11 +35,11 @@ export default function RelatedAreasLinks({
           "[scrollbar-width:none]"
         )}
         role="list"
-        aria-label={t("area.related_areas_label")}
+        aria-label="Related areas in this room"
       >
         {relatedAreas.map((area) => {
           const Icon = iconMap[area.iconType] ?? MapPin;
-          const displayName = area.nameZh ? `${area.nameZh} · ${area.name}` : area.name;
+          const displayName = area.name;
           return (
             <Link
               key={area.id}

@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-import { BRAND_NAME } from "@/lib/constants";
-import { t } from "@/lib/locales/zh";
+import { APP_DESCRIPTION, APP_NAME, BRAND_NAME, PROPERTY_NAME } from "@/lib/constants";
 import "./globals.css";
 
 // ---- Fonts ----
@@ -20,10 +19,10 @@ const geistMono = localFont({
 // ---- Metadata ----
 export const metadata: Metadata = {
   title: {
-    default: `${t("app.name")} — ${BRAND_NAME}`,
-    template: `%s — ${t("app.name")}`,
+    default: `${APP_NAME} — ${BRAND_NAME}`,
+    template: `%s — ${APP_NAME}`,
   },
-  description: t("app.tagline"),
+  description: APP_DESCRIPTION,
   keywords: [
     "housekeeping",
     "training",
@@ -71,7 +70,7 @@ export default function RootLayout({
 
               {/* App name */}
               <span className="font-semibold text-base tracking-tight text-primary">
-                {t("app.name")}
+                Housekeeper Training
               </span>
             </div>
 
@@ -89,10 +88,10 @@ export default function RootLayout({
               {BRAND_NAME}
             </span>
             <span className="mx-1.5 text-muted-foreground/30">—</span>
-            <span>{t("property.name")}</span>
+            <span>{PROPERTY_NAME}</span>
             <span className="mx-2 text-muted-foreground/30">·</span>
             <span>
-              © {new Date().getFullYear()} {t("app.name")}
+              © {new Date().getFullYear()} {APP_NAME}
             </span>
           </div>
         </footer>

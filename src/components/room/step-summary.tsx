@@ -27,10 +27,17 @@ export const CLEANING_STEPS: StepData[] = [
 // ── Component ──
 
 interface StepSummaryProps {
+  /** When true, the cleaning-process header is shown in bilingual format (for hotspot modal).
+   *  When false / omitted, it's shown in Chinese only (for standalone page). */
+  bilingual?: boolean;
   className?: string;
 }
 
-export default function StepSummary({ className }: StepSummaryProps) {
+export default function StepSummary({ bilingual = false, className }: StepSummaryProps) {
+  const headerText = bilingual
+    ? t("step_summary.bilingual_header")
+    : t("area.cleaning_process");
+
   return (
     <aside
       className={cn("flex flex-col gap-0.5", className)}
@@ -42,7 +49,7 @@ export default function StepSummary({ className }: StepSummaryProps) {
           <ListOrdered size={13} strokeWidth={2.5} />
         </span>
         <span className="text-xs font-semibold text-foreground/80 tracking-wide uppercase">
-          {t("area.cleaning_process")}
+          {headerText}
         </span>
       </div>
 

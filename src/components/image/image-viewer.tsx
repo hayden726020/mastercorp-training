@@ -274,7 +274,7 @@ export default function ImageViewer({
             aria-hidden="true"
           >
             <BadgeIcon size={12} strokeWidth={3} />
-            {config.labelZh}
+            {config.labelCn}
           </span>
         </div>
       </div>

@@ -48,7 +48,7 @@ export default function ImageGallery({ images, areaName, areaNameZh }: ImageGall
   const hasMultiple = imageCount > 1;
   const currentImage = sortedImages[currentIndex];
 
-  const displayName = areaNameZh ? `${areaNameZh} · ${areaName}` : areaName;
+  const displayName = areaNameZh ?? areaName;
 
   // ── Reset index when images change ──
   useEffect(() => {
@@ -204,7 +204,7 @@ export default function ImageGallery({ images, areaName, areaNameZh }: ImageGall
             aria-hidden="true"
           >
             <BadgeIcon size={12} strokeWidth={3} />
-            {config.labelZh}
+            {config.labelCn}
           </span>
 
           {/* Image counter */}

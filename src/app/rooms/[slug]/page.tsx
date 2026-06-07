@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getRoomBySlug, getAreasByRoom } from "@/data";
-import { t } from "@/lib/locales/zh";
 import RoomOverview from "@/components/room/room-overview";
 import type { Metadata } from "next";
 
@@ -19,13 +18,10 @@ export async function generateStaticParams() {
 // Dynamic metadata per room
 export function generateMetadata({ params }: RoomPageProps): Metadata {
   const room = getRoomBySlug(params.slug);
-  if (!room) return { title: t("room.not_found") };
-  const title = room.nameZh
-    ? `${room.nameZh} · ${room.name}`
-    : room.name;
+  if (!room) return { title: "Room not found" };
   return {
-    title,
-    description: room.descriptionZh ?? room.description,
+    title: room.name,
+    description: room.description,
   };
 }
 
@@ -37,20 +33,20 @@ export default function RoomPage({ params }: RoomPageProps) {
   }
 
   const areas = getAreasByRoom(room.id);
-  const displayName = room.nameZh ? `${room.nameZh} · ${room.name}` : room.name;
-  const displayDesc = room.descriptionZh ?? room.description;
+  const displayName = room.name;
+  const displayDesc = room.description;
 
   return (
     <div className="flex flex-col items-center px-4 py-8 md:py-12">
       <div className="flex flex-col gap-6 w-full max-w-4xl">
         {/* Breadcrumb */}
-        <nav aria-label={t("nav.breadcrumb")}>
+        <nav aria-label="Breadcrumb">
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft size={16} aria-hidden="true" />
-            <span>{t("nav.back_to_home")}</span>
+            <span>Back to Home</span>
           </Link>
         </nav>
 
@@ -70,7 +66,7 @@ export default function RoomPage({ params }: RoomPageProps) {
         {/* Area count badge */}
         {areas.length > 0 && (
           <p className="text-xs text-muted-foreground text-center">
-            {t("room.area_count", { count: areas.length })}
+                        {areas.length} areas with placement standards
           </p>
         )}
       </div>
