@@ -1,0 +1,5 @@
+- [Architecture Decisions](memory/ARCHITECTURE_DECISIONS.md) — Confirmed layout and interaction design decisions from 2026-06-02
+- [SAD V1.0](docs/SAD.md) — Original system architecture (preserved for reference)
+- [SAD V1.1](docs/SAD-V1.1.md) — Simplified architecture with 7 adjustments (current, aligned with decisions)
+- [SAD V1.1 Changelog](docs/SAD-V1.1-CHANGELOG.md) — Complete change report with impact analysis
+- [ROADMAP V1.1](docs/ROADMAP.md) — 15-Sprint development roadmap, aligned with SAD V1.1

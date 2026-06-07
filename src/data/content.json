@@ -1,0 +1,292 @@
+[
+  {
+    "id": "content-a-bed",
+    "areaId": "area-a-bed",
+    "title": "Bedroom Standards",
+    "titleZh": "卧室标准",
+    "description": "Bed-making process (8 steps):\n1. Fitted Sheet — Fit the King Fitted Sheet over the mattress. Pull all four corners tight.\n2. First Flat Sheet — Lay the King Flat Sheet on the bed. Leave about two finger-widths (2–3 in) of overhang at the headboard.\n3. Duvet — Lay the Duvet flat in the center of the bed. Top edge flush with the headboard.\n4. Second Flat Sheet — Lay another King Flat Sheet. Align the top edge with the duvet top.\n5. Headboard Fold — Fold the excess sheet from Step 2 back over the duvet. About 1 in wide, neat and straight.\n6. Tuck Sides & Foot — Tuck all excess material under the mattress. Pull tight, no visible wrinkles.\n7. Pillow Dressing — Pillow Protector first, then Pillow Case. Opening faces inward.\n8. Pillow Placement — Center pillows at headboard. Symmetrical, equal height.",
+    "descriptionZh": "铺床流程（8步）：\n1. 铺床笠（King Fitted Sheet）—— 将King Fitted Sheet套在床垫上，四个角全部拉紧，确保没有松脱。\n2. 铺第一层平床单（King Flat Sheet）—— 将King Flat Sheet铺在床上，床头位置多留约两根手指宽（约2-3英寸）垂出床垫。\n3. 铺被子（Duvet）—— 将Duvet平铺在床中央，被子顶部与床头边缘齐平。\n4. 铺第二层平床单（King Flat Sheet）—— 再铺一张King Flat Sheet，床单顶部与Duvet顶部对齐。\n5. 做床头翻边—— 将第2步多留出来的床单向上翻折回来，盖住Duvet顶部，翻折宽度约1英寸左右，看起来整齐平直。\n6. 收床尾和两侧—— 将床尾及两侧所有多余的床单和被子塞入床垫下，拉紧表面，确保没有明显褶皱。\n7. 套枕头—— 先套Pillow Protector（枕芯保护套），再套Pillow Case（枕套），整理平整，枕套开口朝内侧。\n8. 摆放枕头—— 将枕头居中放在床头，左右对称，高度一致。",
+    "images": [
+      {
+        "id": "img-a-bed-01",
+        "areaId": "area-a-bed",
+        "imageUrl": "/areas/a-suite/bed/bed.jpg",
+        "thumbnailUrl": "/areas/a-suite/bed/bed.jpg",
+        "altText": "Correct: King bed with 4 pillows at 45° angle, duvet flush with headboard, flat sheet folded neatly",
+        "altTextZh": "正确：特大床4个枕头呈45度角，羽绒被与床头齐平，床单折叠整齐",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-a-kitchen",
+    "areaId": "area-a-kitchen",
+    "title": "Kitchen Standards",
+    "titleZh": "厨房标准",
+    "description": "Full kitchen with polished appliances, organized cabinets, and clean countertops. All cooking equipment placed in designated drawers. Sink must be spotless with no water spots.",
+    "descriptionZh": "全套厨房配备光亮电器、整齐橱柜和干净台面。所有烹饪器具放置在指定抽屉中。水槽必须一尘不染，无水渍。",
+    "images": [
+      {
+        "id": "img-a-kitchen-01",
+        "areaId": "area-a-kitchen",
+        "imageUrl": "/areas/a-suite/kitchen/kitchen.jpg",
+        "thumbnailUrl": "/areas/a-suite/kitchen/kitchen.jpg",
+        "altText": "Correct: Polished appliances, organized countertops, spotless sink",
+        "altTextZh": "正确：光亮电器、整齐台面、一尘不染的水槽",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-a-bathroom",
+    "areaId": "area-a-bathroom",
+    "title": "Bathroom Standards",
+    "titleZh": "浴室标准",
+    "description": "Marble bathroom with soaking tub, rainfall shower, and luxury amenities. All surfaces must be streak-free. Amenities arranged in prescribed order on vanity tray.",
+    "descriptionZh": "大理石浴室，配有浴缸、热带雨林淋浴和豪华用品。所有表面必须无水痕。用品按规定顺序摆放在托盘上。",
+    "images": [
+      {
+        "id": "img-a-bathroom-01",
+        "areaId": "area-a-bathroom",
+        "imageUrl": "/areas/a-suite/bathroom/bathroom.jpg",
+        "thumbnailUrl": "/areas/a-suite/bathroom/bathroom.jpg",
+        "altText": "Correct: Marble surfaces streak-free, amenities arranged on vanity tray",
+        "altTextZh": "正确：大理石表面无水痕，用品整齐摆放在托盘上",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      },
+      {
+        "id": "img-a-bathroom-02",
+        "areaId": "area-a-bathroom",
+        "imageUrl": "/areas/a-suite/bathroom/shower.jpg",
+        "thumbnailUrl": "/areas/a-suite/bathroom/shower.jpg",
+        "altText": "Detail: Rainfall shower and soaking tub — check for water spots and mineral deposits",
+        "altTextZh": "细节：热带雨林淋浴和浴缸 — 检查水渍和矿物沉积",
+        "imageType": "DETAIL",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "id": "content-a-toilet",
+    "areaId": "area-a-toilet",
+    "title": "Toilet Standards",
+    "titleZh": "马桶间标准",
+    "description": "Separate toilet with bidet and premium fixtures. Both toilet and bidet must be thoroughly cleaned and sanitized. Toilet paper folded to a point (triangle fold).",
+    "descriptionZh": "独立马桶间配有坐浴器和高级洁具。马桶和坐浴器均须彻底清洁消毒。卫生纸折成三角尖形。",
+    "images": [
+      {
+        "id": "img-a-toilet-01",
+        "areaId": "area-a-toilet",
+        "imageUrl": "/areas/a-suite/toilet/toilet.jpg",
+        "thumbnailUrl": "/areas/a-suite/toilet/toilet.jpg",
+        "altText": "Correct: Fully sanitized toilet and bidet, all surfaces disinfected",
+        "altTextZh": "正确：马桶和坐浴器彻底消毒，所有表面均已杀菌",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      },
+      {
+        "id": "img-a-toilet-02",
+        "areaId": "area-a-toilet",
+        "imageUrl": "/areas/a-suite/toilet/toilet-towel.jpg",
+        "thumbnailUrl": "/areas/a-suite/toilet/toilet-towel.jpg",
+        "altText": "Detail: Toilet paper triangle fold and spare roll on holder",
+        "altTextZh": "细节：卫生纸三角折叠和备用卷纸在支架上",
+        "imageType": "DETAIL",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "id": "content-a-washbasin-1",
+    "areaId": "area-a-washbasin-1",
+    "title": "Washbasin 1 Standards (Left)",
+    "titleZh": "洗手盆 1 标准（左）",
+    "description": "Left washbasin with mirror, soap dispenser, and towel set. Mirror must be streak-free under all lighting conditions. Soap dispenser filled to at least 50%.",
+    "descriptionZh": "左侧洗手盆，配有镜子、皂液器和毛巾套装。镜子在所有光照条件下必须无水痕。皂液器至少填充50%。",
+    "images": [
+      {
+        "id": "img-a-wb1-01",
+        "areaId": "area-a-washbasin-1",
+        "imageUrl": "/areas/a-suite/washbasin-1/washbasin1.jpg",
+        "thumbnailUrl": "/areas/a-suite/washbasin-1/washbasin1.jpg",
+        "altText": "Correct: Streak-free mirror, hand towel folded in thirds, soap dispenser filled",
+        "altTextZh": "正确：无水痕镜子、擦手巾三折叠放、皂液器已填充",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      },
+      {
+        "id": "img-a-wb1-02",
+        "areaId": "area-a-washbasin-1",
+        "imageUrl": "/areas/a-suite/washbasin-1/washbasin1-alt.jpg",
+        "thumbnailUrl": "/areas/a-suite/washbasin-1/washbasin1-alt.jpg",
+        "altText": "Detail: Faucet and basin — check for water spots and toothpaste residue",
+        "altTextZh": "细节：水龙头和洗手盆 — 检查水渍和牙膏残留",
+        "imageType": "DETAIL",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "id": "content-a-washbasin-2",
+    "areaId": "area-a-washbasin-2",
+    "title": "Washbasin 2 Standards (Right)",
+    "titleZh": "洗手盆 2 标准（右）",
+    "description": "Right washbasin with mirror, soap dispenser, and towel set. Same standards as Washbasin 1. Confirm both basins are equally clean and fully stocked.",
+    "descriptionZh": "右侧洗手盆，配有镜子、皂液器和毛巾套装。与洗手盆1标准相同。确认两个洗手盆同样干净且用品齐全。",
+    "images": [
+      {
+        "id": "img-a-wb2-01",
+        "areaId": "area-a-washbasin-2",
+        "imageUrl": "/areas/a-suite/washbasin-2/washbasin2.png",
+        "thumbnailUrl": "/areas/a-suite/washbasin-2/washbasin2.png",
+        "altText": "Correct: Washbasin 2 matching Washbasin 1 — consistent towel fold, soap level, mirror clarity",
+        "altTextZh": "正确：洗手盆2与洗手盆1一致 — 毛巾折叠、皂液高度、镜子清晰度均统一",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      },
+      {
+        "id": "img-a-wb2-02",
+        "areaId": "area-a-washbasin-2",
+        "imageUrl": "/areas/a-suite/washbasin-2/washbasin2-alt.png",
+        "thumbnailUrl": "/areas/a-suite/washbasin-2/washbasin2-alt.png",
+        "altText": "Detail: Side-by-side parity check — both dispensers at identical fill level",
+        "altTextZh": "细节：并排一致性检查 — 两个皂液器液位相同",
+        "imageType": "DETAIL",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "id": "content-a-closet",
+    "areaId": "area-a-closet",
+    "title": "Closet Standards",
+    "titleZh": "衣橱标准",
+    "description": "Walk-in closet with wooden hangers (8 minimum), luggage rack, safe box, and extra blanket. Hangers must be uniformly spaced at 2 finger-widths apart.",
+    "descriptionZh": "步入式衣橱配有木制衣架（至少8个）、行李架、保险箱和备用毛毯。衣架间距必须均匀，保持两指宽距离。",
+    "images": [
+      {
+        "id": "img-a-closet-01",
+        "areaId": "area-a-closet",
+        "imageUrl": "/areas/a-suite/closet/closet.jpg",
+        "thumbnailUrl": "/areas/a-suite/closet/closet.jpg",
+        "altText": "Correct: Uniform wooden hangers, luggage rack and safe box present, blanket neatly folded",
+        "altTextZh": "正确：统一木制衣架、行李架和保险箱齐备、毛毯折叠整齐",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-b-bed",
+    "areaId": "area-b-bed",
+    "title": "Bed Area Standards",
+    "titleZh": "床区标准",
+    "description": "Bed-making process (8 steps):\n1. Fitted Sheet — Fit the King Fitted Sheet over the mattress. Pull all four corners tight.\n2. First Flat Sheet — Lay the King Flat Sheet on the bed. Leave about two finger-widths (2–3 in) of overhang at the headboard.\n3. Duvet — Lay the Duvet flat in the center of the bed. Top edge flush with the headboard.\n4. Second Flat Sheet — Lay another King Flat Sheet. Align the top edge with the duvet top.\n5. Headboard Fold — Fold the excess sheet from Step 2 back over the duvet. About 1 in wide, neat and straight.\n6. Tuck Sides & Foot — Tuck all excess material under the mattress. Pull tight, no visible wrinkles.\n7. Pillow Dressing — Pillow Protector first, then Pillow Case. Opening faces inward.\n8. Pillow Placement — Center pillows at headboard. Symmetrical, equal height.",
+    "descriptionZh": "铺床流程（8步）：\n1. 铺床笠（King Fitted Sheet）—— 将King Fitted Sheet套在床垫上，四个角全部拉紧，确保没有松脱。\n2. 铺第一层平床单（King Flat Sheet）—— 将King Flat Sheet铺在床上，床头位置多留约两根手指宽（约2-3英寸）垂出床垫。\n3. 铺被子（Duvet）—— 将Duvet平铺在床中央，被子顶部与床头边缘齐平。\n4. 铺第二层平床单（King Flat Sheet）—— 再铺一张King Flat Sheet，床单顶部与Duvet顶部对齐。\n5. 做床头翻边—— 将第2步多留出来的床单向上翻折回来，盖住Duvet顶部，翻折宽度约1英寸左右，看起来整齐平直。\n6. 收床尾和两侧—— 将床尾及两侧所有多余的床单和被子塞入床垫下，拉紧表面，确保没有明显褶皱。\n7. 套枕头—— 先套Pillow Protector（枕芯保护套），再套Pillow Case（枕套），整理平整，枕套开口朝内侧。\n8. 摆放枕头—— 将枕头居中放在床头，左右对称，高度一致。",
+    "images": [
+      {
+        "id": "img-b-bed-01",
+        "areaId": "area-b-bed",
+        "imageUrl": "/areas/b-suite/bed/bed.jpg",
+        "thumbnailUrl": "/areas/b-suite/bed/bed.jpg",
+        "altText": "Correct: Queen bed with 3 pillows symmetrically placed, bed skirt even, linens smooth",
+        "altTextZh": "正确：大床3个枕头对称摆放，床裙均匀垂挂，床品平整",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-b-bathroom",
+    "areaId": "area-b-bathroom",
+    "title": "Bathroom Standards",
+    "titleZh": "浴室标准",
+    "description": "Standard bathroom with glass shower, vanity mirror, and towel set. Glass shower enclosure must be spotless — use squeegee after cleaning and wipe edges dry.",
+    "descriptionZh": "标准浴室，配有玻璃淋浴房、化妆镜和毛巾套装。玻璃淋浴房必须无水渍 — 清洁后用刮水器刮干，并将边缘擦干。",
+    "images": [
+      {
+        "id": "img-b-bathroom-01",
+        "areaId": "area-b-bathroom",
+        "imageUrl": "/areas/b-suite/bathroom/shower-b.jpg",
+        "thumbnailUrl": "/areas/b-suite/bathroom/shower-b.jpg",
+        "altText": "Correct: Glass shower enclosure spotless, no water spots or soap scum",
+        "altTextZh": "正确：玻璃淋浴房无水渍，无皂垢",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      },
+      {
+        "id": "img-b-bathroom-02",
+        "areaId": "area-b-bathroom",
+        "imageUrl": "/areas/b-suite/bathroom/shower-b-alt.jpg",
+        "thumbnailUrl": "/areas/b-suite/bathroom/shower-b-alt.jpg",
+        "altText": "Detail: Shower drain clear of hair, glass door tracks dry and clean",
+        "altTextZh": "细节：淋浴排水口无毛发，玻璃门轨道干燥清洁",
+        "imageType": "DETAIL",
+        "sortOrder": 2
+      }
+    ]
+  },
+  {
+    "id": "content-b-kitchen",
+    "areaId": "area-b-kitchen",
+    "title": "Kitchen Standards",
+    "titleZh": "厨房标准",
+    "description": "Kitchen area with cooking equipment and counter space. Compact layout requires efficient organization. All surfaces clean and sanitized.",
+    "descriptionZh": "厨房区域配有烹饪设备和操作台。紧凑布局需要高效收纳。所有表面干净消毒。",
+    "images": [
+      {
+        "id": "img-b-kitchen-01",
+        "areaId": "area-b-kitchen",
+        "imageUrl": "/areas/b-suite/kitchen/kitchen.jpg",
+        "thumbnailUrl": "/areas/b-suite/kitchen/kitchen.jpg",
+        "altText": "Correct: Compact layout organized efficiently, all surfaces fingerprint-free",
+        "altTextZh": "正确：紧凑布局高效收纳，所有表面无指纹",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-b-closet",
+    "areaId": "area-b-closet",
+    "title": "Closet Standards",
+    "titleZh": "衣橱标准",
+    "description": "Built-in closet with hangers (6 minimum), iron, and extra blanket. Iron must be clean with no mineral deposits on soleplate and water reservoir emptied.",
+    "descriptionZh": "嵌入式衣橱配有衣架（至少6个）、熨斗和备用毛毯。熨斗必须干净，底板无矿物沉积，水箱已清空。",
+    "images": [
+      {
+        "id": "img-b-closet-01",
+        "areaId": "area-b-closet",
+        "imageUrl": "/areas/b-suite/closet/closet.jpg",
+        "thumbnailUrl": "/areas/b-suite/closet/closet.jpg",
+        "altText": "Correct: Uniform wooden hangers, iron cord wrapped neatly, shelf surfaces dusted",
+        "altTextZh": "正确：统一木制衣架、熨斗电线缠绕整齐、搁板表面无灰尘",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  },
+  {
+    "id": "content-b-washbasin",
+    "areaId": "area-b-washbasin",
+    "title": "Washbasin Standards",
+    "titleZh": "洗手盆标准",
+    "description": "Vanity washbasin with mirror, soap dispenser, and towel set. Mirror must be streak-free, soap dispenser filled to at least 50%.",
+    "descriptionZh": "化妆台洗手盆，配有镜子、皂液器和毛巾套装。镜子必须无水痕，皂液器至少填充50%。",
+    "images": [
+      {
+        "id": "img-b-washbasin-01",
+        "areaId": "area-b-washbasin",
+        "imageUrl": "/areas/b-suite/washbasin/washbasin.jpg",
+        "thumbnailUrl": "/areas/b-suite/washbasin/washbasin.jpg",
+        "altText": "Correct: Streak-free mirror, soap dispenser filled above 50%, towel set properly folded",
+        "altTextZh": "正确：无水痕镜子、皂液器填充超过50%、毛巾套装折叠整齐",
+        "imageType": "STANDARD",
+        "sortOrder": 1
+      }
+    ]
+  }
+]

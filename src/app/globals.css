@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Holiday Resort Housekeeper Training System — Design Tokens
+   Ref: PAGE-PROTOTYPES.md §Color System, §Typography, §Spacing
+   ============================================================ */
+
+/* ---- Font Loading ---- */
+@layer base {
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: var(--font-sans);
+  }
+
+  :root {
+    /* ---- Brand Colors ---- */
+    --brand-primary: #1A5F7A;
+    --brand-primary-light: #2C8096;
+    --brand-primary-dark: #12465C;
+    --brand-accent: #D4A853;
+    --brand-accent-light: #E3BC71;
+    --brand-accent-dark: #96732E;
+    --brand-surface: #FAF8F5;
+    --brand-surface-dark: #F0EDE8;
+    --brand-success: #2D8B4E;
+    --brand-warning: #D4893A;
+    --brand-destructive: #C13A3A;
+    --brand-info: #3B7ABF;
+
+    /* ---- shadcn/ui (oklch — overridden with brand colors) ---- */
+    --background: oklch(0.985 0.002 90);
+    --foreground: oklch(0.18 0.01 250);
+
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.18 0.01 250);
+
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.18 0.01 250);
+
+    /* Primary = Holiday Resort Blue #1A5F7A ≈ oklch(0.44 0.09 240) */
+    --primary: oklch(0.44 0.09 240);
+    --primary-foreground: oklch(0.985 0 0);
+
+    /* Secondary = Warm Gold #D4A853 ≈ oklch(0.72 0.12 85) */
+    --secondary: oklch(0.72 0.12 85);
+    --secondary-foreground: oklch(0.205 0 0);
+
+    /* Muted = light gray with warm tint */
+    --muted: oklch(0.96 0.002 90);
+    --muted-foreground: oklch(0.5 0.01 250);
+
+    /* Accent = same as secondary (gold) for UI highlights */
+    --accent: oklch(0.72 0.12 85);
+    --accent-foreground: oklch(0.205 0 0);
+
+    --destructive: oklch(0.5 0.19 28);
+    --border: oklch(0.89 0.01 250);
+    --input: oklch(0.89 0.01 250);
+    --ring: oklch(0.44 0.09 240);
+
+    /* Charts */
+    --chart-1: oklch(0.44 0.09 240);
+    --chart-2: oklch(0.72 0.12 85);
+    --chart-3: oklch(0.5 0.08 200);
+    --chart-4: oklch(0.5 0.19 28);
+    --chart-5: oklch(0.3 0.06 160);
+
+    /* ---- Radii ---- */
+    --radius: 0.625rem;
+
+    /* ---- Sidebar ---- */
+    --sidebar: oklch(0.985 0.002 90);
+    --sidebar-foreground: oklch(0.18 0.01 250);
+    --sidebar-primary: oklch(0.44 0.09 240);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.72 0.12 85);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.89 0.01 250);
+    --sidebar-ring: oklch(0.44 0.09 240);
+  }
+
+  /* ---- Dark Theme (reserved for future) ---- */
+  .dark {
+    --background: oklch(0.18 0.01 250);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.22 0.01 250);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.22 0.01 250);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.6 0.08 240);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.65 0.1 85);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.28 0.01 250);
+    --muted-foreground: oklch(0.65 0.01 250);
+    --accent: oklch(0.65 0.1 85);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.6 0.24 28);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.6 0.08 240);
+    --chart-1: oklch(0.6 0.08 240);
+    --chart-2: oklch(0.65 0.1 85);
+    --chart-3: oklch(0.55 0.07 200);
+    --chart-4: oklch(0.6 0.24 28);
+    --chart-5: oklch(0.5 0.08 160);
+    --sidebar: oklch(0.22 0.01 250);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.6 0.08 240);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.65 0.1 85);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.6 0.08 240);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* Focus ring — Tailwind 3.x compatible (no opacity modifier on outline) */
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ---- Utility Classes ---- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Surface background with warm tint */
+  .bg-surface {
+    background-color: var(--brand-surface);
+  }
+
+  /* Container with max-width */
+  .container-app {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-app {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
