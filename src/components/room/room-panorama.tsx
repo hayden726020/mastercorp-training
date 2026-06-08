@@ -22,15 +22,19 @@ interface ImageBounds {
 }
 
 /**
- * Calculate the actual rendered bounds of an image under `object-fit: cover`.
+ * Calculate where an image actually renders inside a container when using
+ * `object-fit: contain`.
  *
- * When the container aspect ratio differs from the image's natural aspect ratio,
- * `object-cover` scales the image to fill the container and crops the overflow.
- * Hotspots defined as percentages of the image must be positioned relative to
- * these rendered bounds — not the full container — so they stay aligned on all
- * screen sizes (including mobile where the aspect ratio changes).
+ * `object-contain` scales the image to fit entirely within the container while
+ * preserving its natural aspect ratio. If the container's aspect ratio differs
+ * from the image's, the image is letterboxed (top/bottom bars) or pillarboxed
+ * (left/right bars) and centered.
+ *
+ * Hotspots defined as percentages of the original image must be placed inside
+ * a layer that matches these rendered bounds — otherwise percentage coordinates
+ * are relative to the full container and don't align with the scaled image.
  */
-function calcObjectCoverBounds(
+function calcObjectContainBounds(
   containerW: number,
   containerH: number,
   imgNaturalW: number,
@@ -44,16 +48,16 @@ function calcObjectCoverBounds(
   const imgAR = imgNaturalW / imgNaturalH;
 
   if (containerAR > imgAR) {
-    // Container is wider than the image → image scaled to match height,
-    // cropped horizontally on left/right.
+    // Container is wider than the image.
+    // Image scaled to match container height → pillarboxed on left/right.
     const renderedW = containerH * imgAR;
     const renderedH = containerH;
     const left = (containerW - renderedW) / 2;
     return { left, top: 0, width: renderedW, height: renderedH };
   }
 
-  // Container is taller (or equal) → image scaled to match width,
-  // cropped vertically on top/bottom.
+  // Container is taller than (or equal to) the image.
+  // Image scaled to match container width → letterboxed on top/bottom.
   const renderedW = containerW;
   const renderedH = containerW / imgAR;
   const top = (containerH - renderedH) / 2;
@@ -75,7 +79,7 @@ export default function RoomPanorama({
     const img = imgRef.current;
     if (!container || !img) return;
 
-    const bounds = calcObjectCoverBounds(
+    const bounds = calcObjectContainBounds(
       container.clientWidth,
       container.clientHeight,
       img.naturalWidth,
@@ -84,7 +88,6 @@ export default function RoomPanorama({
     setImageBounds(bounds);
   }, []);
 
-  // Recalculate when the image loads (natural dimensions become available)
   const handleImageLoad = useCallback(() => {
     recalcBounds();
   }, [recalcBounds]);
@@ -94,7 +97,7 @@ export default function RoomPanorama({
     const container = containerRef.current;
     if (!container) return;
 
-    // Initial calculation — image may already be loaded (cached)
+    // If image is already loaded (browser cache), calculate immediately
     const img = imgRef.current;
     if (img?.complete && img.naturalWidth > 0) {
       recalcBounds();
@@ -113,18 +116,19 @@ export default function RoomPanorama({
       ref={containerRef}
       className={cn(
         "relative w-full overflow-hidden rounded-card",
-        // 4:3 aspect ratio on mobile, 16:9 on desktop
+        // 4:3 on mobile, 16:9 on desktop
         "aspect-[4/3] md:aspect-[16/9]",
         "bg-muted shadow-card",
         className
       )}
     >
-      {/* Panorama image */}
+      {/* Panorama image — object-contain so the full image is always visible
+          and percentage-based hotspot positions map 1:1 to the image */}
       <img
         ref={imgRef}
         src={src}
         alt={alt}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain"
         draggable={false}
         onLoad={handleImageLoad}
       />
@@ -135,9 +139,9 @@ export default function RoomPanorama({
         aria-hidden="true"
       />
 
-      {/* Hotspot overlay — positioned to match the image's actual rendered area
-          under object-cover, so percentage-based hotspot coordinates stay aligned
-          across all screen sizes */}
+      {/* Hotspot overlay — matches the image's actual rendered bounds under
+          object-contain. This is the SAME parent as the image, so percentage
+          coordinates are consistent across all screen sizes. */}
       {imageBounds && (
         <div
           className="absolute"
