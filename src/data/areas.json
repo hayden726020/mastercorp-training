@@ -8,7 +8,7 @@
     "description": "King bed with premium linens, 4 pillows arranged at 45° angle",
     "descriptionZh": "特大床配高级床品，4个枕头呈45度角摆放",
     "hotspotType": "POINT",
-    "coordinates": { "x": 20, "y": 31 },
+    "coordinates": { "x": 20, "y": 20 },
     "coordinatesPortrait": { "x": 20, "y": 31 },
     "sortOrder": 0,
     "iconType": "bed"
@@ -22,7 +22,7 @@
     "description": "Full kitchen with cooking equipment, sink, and counter space",
     "descriptionZh": "全套厨房设备，含烹饪器具、水槽和操作台",
     "hotspotType": "POINT",
-    "coordinates": { "x": 57, "y": 61 },
+    "coordinates": { "x": 57, "y": 68 },
     "coordinatesPortrait": { "x": 57, "y": 61 },
     "sortOrder": 1,
     "iconType": "kitchen"
@@ -36,7 +36,7 @@
     "description": "Marble bathroom with soaking tub, rainfall shower, and luxury amenities",
     "descriptionZh": "大理石浴室，配有浴缸、热带雨林淋浴和豪华用品",
     "hotspotType": "POINT",
-    "coordinates": { "x": 9, "y": 58 },
+    "coordinates": { "x": 9, "y": 62 },
     "coordinatesPortrait": { "x": 9, "y": 61 },
     "sortOrder": 2,
     "iconType": "bath"
@@ -50,7 +50,7 @@
     "description": "Separate toilet with bidet and premium fixtures",
     "descriptionZh": "独立马桶间，配有坐浴器和高级洁具",
     "hotspotType": "POINT",
-    "coordinates": { "x": 14, "y": 78 },
+    "coordinates": { "x": 14, "y": 94 },
     "coordinatesPortrait": { "x": 13, "y": 77 },
     "sortOrder": 3,
     "iconType": "toilet"
@@ -64,7 +64,7 @@
     "description": "Left washbasin with mirror, soap dispenser, and towel set",
     "descriptionZh": "左侧洗手盆，配有镜子、皂液器和毛巾套装",
     "hotspotType": "POINT",
-    "coordinates": { "x": 28, "y": 78 },
+    "coordinates": { "x": 28, "y": 94 },
     "coordinatesPortrait": { "x": 28, "y": 78 },
     "sortOrder": 4,
     "iconType": "washbasin"
@@ -78,7 +78,7 @@
     "description": "Right washbasin with mirror, soap dispenser, and towel set",
     "descriptionZh": "右侧洗手盆，配有镜子、皂液器和毛巾套装",
     "hotspotType": "POINT",
-    "coordinates": { "x": 24, "y": 60 },
+    "coordinates": { "x": 24, "y": 65 },
     "coordinatesPortrait": { "x": 23, "y": 59 },
     "sortOrder": 5,
     "iconType": "washbasin"
@@ -92,7 +92,7 @@
     "description": "Walk-in closet with wooden hangers, luggage rack, and safe box",
     "descriptionZh": "步入式衣橱，配有木制衣架、行李架和保险箱",
     "hotspotType": "POINT",
-    "coordinates": { "x": 31, "y": 54 },
+    "coordinates": { "x": 31, "y": 56 },
     "coordinatesPortrait": { "x": 31, "y": 54 },
     "sortOrder": 6,
     "iconType": "door-open"
