@@ -33,7 +33,6 @@ export default function HotspotOverlay({
     <div
       className="absolute inset-0"
       aria-label={t("hotspot.room_hotspots")}
-      data-hotspot-container
     >
       {areas.map((area) => {
         const isDraggable = draggableAreaIds?.has(area.id) ?? false;
