@@ -14,54 +14,17 @@ interface RoomPanoramaProps {
   className?: string;
 }
 
-interface ImageBounds {
-  left: number;
-  top: number;
+/**
+ * Design reference dimensions for hotspot coordinates.
+ *
+ * All hotspot x/y values in areas.json are percentages of the original image's
+ * pixel dimensions. The container's aspect-ratio is locked to the image's
+ * natural aspect ratio so these percentages always map 1:1 to the visible
+ * image — no bounds calculation, no cropping math, no responsive breakpoints.
+ */
+interface DesignReference {
   width: number;
   height: number;
-}
-
-/**
- * Calculate where an image actually renders inside a container when using
- * `object-fit: contain`.
- *
- * `object-contain` scales the image to fit entirely within the container while
- * preserving its natural aspect ratio. If the container's aspect ratio differs
- * from the image's, the image is letterboxed (top/bottom bars) or pillarboxed
- * (left/right bars) and centered.
- *
- * Hotspots defined as percentages of the original image must be placed inside
- * a layer that matches these rendered bounds — otherwise percentage coordinates
- * are relative to the full container and don't align with the scaled image.
- */
-function calcObjectContainBounds(
-  containerW: number,
-  containerH: number,
-  imgNaturalW: number,
-  imgNaturalH: number
-): ImageBounds {
-  if (!containerW || !containerH || !imgNaturalW || !imgNaturalH) {
-    return { left: 0, top: 0, width: containerW, height: containerH };
-  }
-
-  const containerAR = containerW / containerH;
-  const imgAR = imgNaturalW / imgNaturalH;
-
-  if (containerAR > imgAR) {
-    // Container is wider than the image.
-    // Image scaled to match container height → pillarboxed on left/right.
-    const renderedW = containerH * imgAR;
-    const renderedH = containerH;
-    const left = (containerW - renderedW) / 2;
-    return { left, top: 0, width: renderedW, height: renderedH };
-  }
-
-  // Container is taller than (or equal to) the image.
-  // Image scaled to match container width → letterboxed on top/bottom.
-  const renderedW = containerW;
-  const renderedH = containerW / imgAR;
-  const top = (containerH - renderedH) / 2;
-  return { left: 0, top, width: renderedW, height: renderedH };
 }
 
 export default function RoomPanorama({
@@ -70,60 +33,46 @@ export default function RoomPanorama({
   children,
   className,
 }: RoomPanoramaProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
-  const [imageBounds, setImageBounds] = useState<ImageBounds | null>(null);
-
-  const recalcBounds = useCallback(() => {
-    const container = containerRef.current;
-    const img = imgRef.current;
-    if (!container || !img) return;
-
-    const bounds = calcObjectContainBounds(
-      container.clientWidth,
-      container.clientHeight,
-      img.naturalWidth,
-      img.naturalHeight
-    );
-    setImageBounds(bounds);
-  }, []);
+  const [designRef, setDesignRef] = useState<DesignReference | null>(null);
 
   const handleImageLoad = useCallback(() => {
-    recalcBounds();
-  }, [recalcBounds]);
+    const img = imgRef.current;
+    if (!img || !img.naturalWidth || !img.naturalHeight) return;
+    // Lock container aspect ratio to the original image's native dimensions.
+    // This is the single-source-of-truth design reference for all hotspot
+    // coordinates — one coordinate system, every screen, portrait or landscape.
+    setDesignRef({
+      width: img.naturalWidth,
+      height: img.naturalHeight,
+    });
+  }, []);
 
-  // Recalculate on container resize (orientation change, window resize)
+  // Handle browser-cached images (onLoad won't fire if already loaded)
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    // If image is already loaded (browser cache), calculate immediately
     const img = imgRef.current;
     if (img?.complete && img.naturalWidth > 0) {
-      recalcBounds();
+      handleImageLoad();
     }
+  }, [handleImageLoad, src]);
 
-    const observer = new ResizeObserver(() => {
-      recalcBounds();
-    });
-    observer.observe(container);
-
-    return () => observer.disconnect();
-  }, [recalcBounds, src]);
+  // Fallback aspect ratio shown while the image loads.
+  // Replaced by the image's true AR as soon as naturalDimensions are known.
+  const aspectRatio = designRef
+    ? `${designRef.width} / ${designRef.height}`
+    : "4 / 3";
 
   return (
     <div
-      ref={containerRef}
       className={cn(
-        "relative w-full overflow-hidden rounded-card",
-        // 4:3 on mobile, 16:9 on desktop
-        "aspect-[4/3] md:aspect-[16/9]",
-        "bg-muted shadow-card",
+        "relative w-full overflow-hidden rounded-card bg-muted shadow-card",
         className
       )}
+      style={{ aspectRatio }}
     >
-      {/* Panorama image — object-contain so the full image is always visible
-          and percentage-based hotspot positions map 1:1 to the image */}
+      {/* Panorama image — object-contain preserves the full image.
+          Since the container's aspect-ratio matches the image, the image
+          fills the container exactly with no letterboxing or cropping. */}
       <img
         ref={imgRef}
         src={src}
@@ -139,20 +88,11 @@ export default function RoomPanorama({
         aria-hidden="true"
       />
 
-      {/* Hotspot overlay — matches the image's actual rendered bounds under
-          object-contain. This is the SAME parent as the image, so percentage
-          coordinates are consistent across all screen sizes. */}
-      {imageBounds && (
-        <div
-          className="absolute"
-          style={{
-            left: imageBounds.left,
-            top: imageBounds.top,
-            width: imageBounds.width,
-            height: imageBounds.height,
-          }}
-          data-hotspot-container
-        >
+      {/* Hotspot overlay — absolute inset-0 fills the container which exactly
+          matches the image. Percentage coordinates (x%, y%) from areas.json
+          map 1:1 to the visible image on every screen. */}
+      {designRef && (
+        <div className="absolute inset-0" data-hotspot-container>
           {children}
         </div>
       )}
