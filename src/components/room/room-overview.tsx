@@ -10,6 +10,7 @@ import AreaDetailSheet from "./area-detail-sheet";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { getContentByArea } from "@/data";
 import { cn } from "@/lib/utils";
+import { useOrientation } from "@/hooks/use-orientation";
 
 interface RoomOverviewProps {
   room: RoomType;
@@ -25,20 +26,38 @@ export default function RoomOverview({ room, areas }: RoomOverviewProps) {
     Record<string, PointCoordinates>
   >({});
 
+  // Detect screen orientation to select the correct coordinate set.
+  // portrait → use coordinatesPortrait (falls back to coordinates)
+  // landscape → use coordinates (the default)
+  const orientation = useOrientation();
+
+  // Apply orientation-specific coordinate overrides
+  const orientedAreas = useMemo(
+    () =>
+      orientation === "portrait"
+        ? areas.map((a) =>
+            a.coordinatesPortrait
+              ? { ...a, coordinates: a.coordinatesPortrait }
+              : a
+          )
+        : areas,
+    [areas, orientation]
+  );
+
   // Merge adjusted positions into the areas list
   const effectiveAreas = useMemo(
     () =>
-      areas.map((a) => {
+      orientedAreas.map((a) => {
         const adjusted = adjustedPositions[a.id];
         return adjusted ? { ...a, coordinates: { ...adjusted } } : a;
       }),
-    [areas, adjustedPositions]
+    [orientedAreas, adjustedPositions]
   );
 
   // ── All areas are draggable so the user can reposition them ──
   const draggableAreaIds = useMemo(
-    () => new Set(areas.map((a) => a.id)),
-    [areas]
+    () => new Set(orientedAreas.map((a) => a.id)),
+    [orientedAreas]
   );
 
   const handleAreaClick = useCallback((area: RoomArea) => {
@@ -125,6 +144,9 @@ export default function RoomOverview({ room, areas }: RoomOverviewProps) {
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Hotspot Coordinates
+            </span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold capitalize">
+              {orientation}
             </span>
             {hasAdjustments && (
               <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-accent/15 text-accent font-semibold">

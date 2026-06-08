@@ -356,7 +356,13 @@
       "Bash(node -e ' *)",
       "Bash(curl -s \"http://localhost:3000/rooms/b-suite/\")",
       "Bash(curl -s \"http://localhost:3000/rooms/b-suite/area-b-bed/\")",
-      "Bash(Select-Object -First 20)"
+      "Bash(Select-Object -First 20)",
+      "Bash(node -e \"require\\('qrcode'\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(pnpm add *)",
+      "Bash(node -e \"const {readFileSync}=require\\('fs'\\);const sizeOf=require\\('image-size'\\);const a=sizeOf\\('public/floorplans/a-suite.jpg'\\);const b=sizeOf\\('public/floorplans/b-suite.png'\\);console.log\\('A Suite:',a.width,'x',a.height\\);console.log\\('B Suite:',b.width,'x',b.height\\)\")",
+      "Bash(node -e \"const sharp=require\\('sharp'\\);Promise.all\\([sharp\\('public/floorplans/a-suite.jpg'\\).metadata\\(\\),sharp\\('public/floorplans/b-suite.png'\\).metadata\\(\\)]\\).then\\(\\([a,b]\\)=>{console.log\\('A Suite:',a.width,'x',a.height\\);console.log\\('B Suite:',b.width,'x',b.height\\)}\\)\")",
+      "Bash(New-Item -ItemType Directory -Force \"e:\\\\Mastercorp Project\\\\src\\\\hooks\")"
     ],
     "additionalDirectories": [
       "e:\\mastercorp-training",

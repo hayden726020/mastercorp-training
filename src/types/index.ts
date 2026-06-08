@@ -74,6 +74,12 @@ export interface RoomArea {
   descriptionZh?: string; // Chinese translation
   hotspotType: HotspotType;
   coordinates: AreaCoordinates;
+  /**
+   * Portrait orientation coordinates override.
+   * When the device is in portrait mode, these replace `coordinates`.
+   * Falls back to `coordinates` if not provided.
+   */
+  coordinatesPortrait?: AreaCoordinates;
   sortOrder: number;
   iconType: string; // icon identifier for marker display
   createdAt?: string;
